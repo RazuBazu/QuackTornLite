@@ -1,0 +1,128 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("QuackTorn Lite", "Ocean")
+
+-- Main
+local Main = Window:NewTab("Item Givers")
+local MainSection = Main:NewSection("Guns & Items")
+
+MainSection:NewButton("M4A1", "Gives you an M4A1 (if item doesnt show up first time reset)", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M4A1"].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+
+MainSection:NewButton("AK-47", "Give you an AK-47 (if item doesnt show up first time reset)", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["AK-47"].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+
+MainSection:NewButton("M9", "Give you an M9 (if item doesnt show up first time reset)", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["M9"].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+
+MainSection:NewButton("Remington 870", "Give you an Remington 870 (if item doesnt show up first time reset)", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+
+MainSection:NewButton("Hammer", "Give you an Hammer (if item doesnt show up first time reset)", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Hammer"].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+
+MainSection:NewButton("Crude Knife", "Give you an Crude Knife (if item doesnt show up first time reset)", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Crude Knife"].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+
+MainSection:NewButton("Keycard", "Keycard has to be dropped by somebody", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Key card"].ITEMPICKUP
+    local Event = game:GetService("Workspace").Remote.ItemHandler
+    Event:InvokeServer(A_1)
+end)
+
+local MainB = Window:NewTab("Gun Modifiers")
+local MainBSection = MainB:NewSection("Modifiers")
+
+MainBSection:NewButton("Fast FireRate for M4A1", "Must have gun equippied.", function()
+local playerName = game.Players.LocalPlayer.Name
+    local gunstatesmodule = game:GetService("Workspace")[playerName]["M4A1"].GunStates
+    local m = require(gunstatesmodule)
+    m.Spread = 1
+    m.FireRate = 0.01
+end)
+
+MainBSection:NewButton("Fast FireRate for AK-47", "Must have gun equippied.", function()
+local playerName = game.Players.LocalPlayer.Name
+    local gunstatesmodule = game:GetService("Workspace")[playerName]["AK-47"].GunStates
+    local m = require(gunstatesmodule)
+    m.Spread = 1
+    m.FireRate = 0.01
+end)
+
+MainBSection:NewButton("Fast FireRate for M9", "Must have gun equippied.", function()
+local playerName = game.Players.LocalPlayer.Name
+    local gunstatesmodule = game:GetService("Workspace")[playerName]["M9"].GunStates
+    local m = require(gunstatesmodule)
+    m.Spread = 1
+    m.AutoFire = true
+    m.FireRate = 0.01
+end)
+
+MainBSection:NewButton("Fast FireRate for Remington 870", "Must have gun equippied.", function()
+local playerName = game.Players.LocalPlayer.Name
+    local gunstatesmodule = game:GetService("Workspace")[playerName]["Remington 870"].GunStates
+    local m = require(gunstatesmodule)
+    m.Spread = 1
+    m.AutoFire = true
+    m.FireRate = 0.01
+end)
+
+local MainA = Window:NewTab("Player Modifiers")
+local MainASection = MainA:NewSection("Player Modifiers")
+
+MainASection:NewSlider("Walkspeed", "Makes u faster", 1000, 0, function(s) -- 1000 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+MainASection:NewSlider("JumpPower", "jump high", 750, 0, function(s) -- 750 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+MainASection:NewButton("Infinite Health", "large health", 1000, function(s) --10000 HP
+    game.Players.LocalPlayer.Character.Humanoid.Health = s
+end)
+
+MainASection:NewButton("Reset WS/JP", "Resets Walkspeed and JumpPower", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+end)
+
+MainASection:NewButton("Reset HP", "Resets Health", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 100
+end)
+
+local Other = Window:NewTab("Other")
+local OtherSection = Other:NewSection("Other")
+
+OtherSection:NewButton("Chat Spoofer", "Lets you chat for other people", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/ant-7802/--/main/straightmilk.lua'))()
+end)
+
+OtherSection:NewButton("Infinite Yield", "Commands", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+OtherSection:NewButton("Bypassed Filter", "No Chat Filter??", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/QuackerZithh/ChatBypasserRblx/main/ChatBypasser'))()
+end)
+
+OtherSection:NewButton("FE Fling", "Fling People", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/RazuBazu/Fling/main/FEFling'))()
+end)
