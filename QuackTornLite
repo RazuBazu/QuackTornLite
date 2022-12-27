@@ -120,9 +120,21 @@ OtherSection:NewButton("Infinite Yield", "Commands", function()
 end)
 
 OtherSection:NewButton("Bypassed Filter", "No Chat Filter??", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/QuackerZithh/ChatBypasserRblx/main/ChatBypasser'))()
+    loadstring(game:HttpGet("https://the-shed.xyz/roblox/scripts/ChatBypass", true))()
 end)
 
-OtherSection:NewButton("FE Fling", "Fling People", function()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/RazuBazu/Fling/main/FEFling'))()
+OtherSection:NewButton("FE Raybeam", "Must be in R15", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/RazuBazu/Raybeam/main/RaybeamKING353'))()
+end)
+
+OtherSection:NewButton("Gelatek FE Hub", "some sort of fe hub", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Gelatekussy/GelatekHub/main/Main.lua"))()
+end)
+
+OtherSection:NewButton("Sukma Hub", "another fe hub", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/RazuBazu/SukmaHub/main/FE'))()
+end)
+
+OtherSection:NewButton("Universal FE Hub", "universal!!!", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Dvrknvss/UniversalFEScriptHub/main/Script'))()
 end)
